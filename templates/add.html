@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="top_ban ligne"> <!--Top menu bar-->
+    <span class="paramA">
+        <form action="/" method="get" get class="paramB">
+            <button class="button_transparent"> 
+                <img 
+                    src="./static/images/close.png" 
+                    alt="Update" height="20">
+            </button>
+        </form>
+    </span> 
+    <h1>Ajouter une transaction</h1>
+    
+</div>
+
+<section class ="margetop centre">
+    <form method="POST">
+        <div><!--crypto currency dropdown list-->
+            <label for="crypto_select"></label>
+            <input  
+                class = "symbol_search margin_bottom"
+                type="text" 
+                id="name" 
+                name="name" 
+                placeholder="Cryptomonnaie" 
+                value="{{ request.form['name'] }}"
+                required
+            > 
+        </div>
+        <div><!--entering the quantity of crypto purchased-->
+            <label for="crypto_qty"></label>
+            <input  
+                class = "symbol_qty margin_bottom"
+                type="number" 
+                step="any"
+                min="0"  
+                id="quantity" 
+                name="quantity" 
+                placeholder="Quantité" 
+                value="{{ request.form['quantity'] }}"
+                required
+                
+            > 
+        </div>
+        <div><!--entering the price of crypto purchased-->
+            <label for="crypto_price"></label>
+            <input 
+                class = "symbol_euro margin_bottom"
+                type="number" 
+                step="any"
+                min="0" 
+                id="price" 
+                name="price" 
+                placeholder="Prix total" 
+                value="{{ request.form['price'] }}"
+                required
+            >
+        </div>
+        <div><!--entering the price of crypto purchased-->
+            <label for="crypto_date"></label>
+            <input 
+                class = "symbol_date"
+                type="text" 
+                id="date" 
+                name="date" 
+                placeholder="YYYY-MM-DD" 
+                value="{{ request.form['date'] }}"
+                required
+            >
+        </div>
+        <div><!--submit buton-->
+            <input type="submit" value="AJOUTER" class="button_bigger_g" style="text-align: center;">
+        </div>   
+    </form>
+</section>
+
+{% endblock %}

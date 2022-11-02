@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class = "top_ban ligne"> 
+    <h1>Crypto Tracker</h1>
+    <span class="paramA">
+        <form action="/edit" method="get" get class="paramB">
+            <button class="button_transparent"> 
+                <img 
+                    src="../static/images/edit.PNG" 
+                    alt="Update" height="20">
+            </button>
+        </form>
+        <form action="/add" method="get" get class="paramB">
+            <button class="button_transparent"> 
+                <img 
+                    src="../static/images/add.PNG" 
+                    alt="Update" height="20">
+            </button>
+        </form>
+    </span> 
+</div>
+
+<section class="centre margetop">
+    <form action="/graph">
+        <button type="submit" class = "wallet">
+            <h1>Valeur portfolio :</h1>
+            {% for sum_price in sum_price %}
+            <h1>{{sum_price['SUM(price)']}}
+            {% endfor %}
+            <h1> &euro;</h1>
+        </button>
+    </form>
+    <table>
+        <thead class = "ligne text_tab_2">
+            <tr>
+                <th>Portefeuille</th>
+                <th>Quantité</th>
+                <th>Prix d'achat total</th>
+            </tr>
+        </thead>
+        <tbody class = "text_tab_3">
+            {% for crypto_value in crypto_value %}
+                <tr>
+                    <td>
+                        <span class=" text_3 ">{{crypto_value['name']}}</span>
+                    </td>
+                    <td>
+                        <span class=" text_3 ">{{crypto_value['quantity']}}</span>
+                    </td>
+                    <td>
+                        <span class=" text_3 ">{{crypto_value['price']}} €</span>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <hr>
+    <br>
+    <form>
+            <h1>Information sur une cryptomonnaie (Nom, Prix en €, Tendance 24h en %)</h1>
+    </form>
+    <br>
+    <div>
+        <label for="crypto_select"></label>
+        <select
+            class = "symbol_search margin_bottom">
+            <option>Choisissez une crypto</option>                
+            {% for crypto_id in crypto_list %}
+                <option value="{{ crypto_id }}">{{ crypto_id }}</option>
+            {% endfor %}
+        </select>
+    </div>
+</section>
+
+{% endblock %}

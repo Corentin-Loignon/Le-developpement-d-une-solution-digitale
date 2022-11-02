@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="top_ban ligne"> <!--Top menu bar-->
+    <span class="paramA">
+        <form action="/" method="get" get class="paramB">
+            <button class="button_transparent"> 
+                <img 
+                    src="./static/images/close.png" 
+                    alt="Update" height="20">
+            </button>
+        </form>
+    </span> 
+    <h1>Vos gains</h1>
+    
+</div>
+
+<div class="centre margetop text_1  ">
+    <p>
+        <span class=" text_2 ">Bientôt disponible</span>
+    </p>
+    <img class="graphs" src="../static/images/build.png" alt = "Graphique historique portefeuille">
+    <p>
+        <span class=" text_2 ">Aperçu de la future fonctionnalité :</span>
+    </p>
+    <img class="graphs" src="../static/images/graph.png" alt = "Graphique historique portefeuille">
+</div> 
+
+{% endblock %}
