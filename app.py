@@ -25,7 +25,7 @@ def get_crypto_value(crypto_value_id):
         abort(404)
     return crypto_value
 
-@app.route('/')
+@app.route('/home')
 def home():
     conn = get_db_connection()
     crypto_value = conn.execute('SELECT * FROM crypto_value').fetchall()
