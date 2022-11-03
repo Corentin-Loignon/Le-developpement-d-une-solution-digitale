@@ -97,7 +97,7 @@
     }
     
 
-    .button, .button_r, .button_g, .button_bigger_r, .button_bigger_g, .button_br,.button_bb {
+    .button, .button_r, .button_g, .button_bigger_g{
         background-color: #1fc36c;
         border: none;
         color: white;
@@ -110,18 +110,12 @@
         border-radius: 4px;
 
     }
-    .button_bigger_r, .button_bigger_g{
+    .button_bigger_g{
         padding: 13px 10px;
         margin: 25px 0px;
-        min-width: 80%;
+        min-width: 30%;
     }
-    .button:hover {
-        background-color: #1a9a55;
-    }
-    .button_br,.button_bb {
-        background-color: #100f0f;
-        color:white;
-    }
+
     .button_g, .button_bigger_g {
         background-color: #efefef;
         color:#100f0f;
